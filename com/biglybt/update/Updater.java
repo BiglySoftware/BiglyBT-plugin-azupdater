@@ -67,7 +67,7 @@ Updater
 		String[]	args )
 	{
 		if (args.length < 3) {
-			System.out.println("Usage: Updater (restart|updateonly) full_classpath full_librarypath full_userpath [config override]");
+			System.out.println("Usage: Updater (restart|updateonly) full_app_path full_userpath [config override]");
 			System.exit(-1);
 		}
     
