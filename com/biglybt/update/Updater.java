@@ -567,6 +567,19 @@ Updater
 						deleteDirOrFile( to_file );
 					}
 					
+						// problem with initial release of BiglyBT - the core updater incorrectly adds a 'move' action targetting Azureus2.jar instead of BiglyBT.jar
+						// Hack here to fix this up while a fixed core is rolled out....
+					
+					if ( to_file.getName().equals( "Azureus2.jar" )){
+						
+						to_file = new File( to_file.getParentFile(), "BiglyBT.jar" );
+						
+						if ( to_file.exists()){
+							
+							deleteDirOrFile( to_file );
+						}
+					}
+					
 					if ( !renameFile( from_file, to_file )){
 						
 							// problem here with updates to azplatform2 updates on Vista that
